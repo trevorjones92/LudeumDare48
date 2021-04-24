@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1820427807563957288}
   - component: {fileID: 1722454513381383950}
   - component: {fileID: 2509165817721915447}
+  - component: {fileID: 649088147279713765}
   - component: {fileID: 6574292148191563314}
   - component: {fileID: 3408386492376053322}
-  - component: {fileID: 649088147279713765}
+  - component: {fileID: 5979838890951982840}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -105,6 +106,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &649088147279713765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3717558839431839627}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.29318064, y: 0.083765745}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7279259, y: 0.5719571}
+  m_EdgeRadius: 0
 --- !u!50 &6574292148191563314
 Rigidbody2D:
   serializedVersion: 4
@@ -138,30 +165,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30d321099c872548afd286524610cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipThrust: 1200
---- !u!61 &649088147279713765
-BoxCollider2D:
+  shipThrust: 0
+--- !u!114 &5979838890951982840
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3717558839431839627}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.29318064, y: 0.083765745}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.7279259, y: 0.5719571}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517c110ce8060a3418e951f2c3147947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipFuel: 200
+  distanceTravelled: 0
