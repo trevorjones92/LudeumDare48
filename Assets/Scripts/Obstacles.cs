@@ -7,12 +7,16 @@ public class Obstacles : MonoBehaviour
 {
     public static Obstacles Instance { get; private set; }
 
-    [SerializeField] private float frequency_1 = 1f;
-    [SerializeField] private float frequency_2 = 2f;
-    [SerializeField] private float frequency_3 = 3f;
-
+    [SerializeField] private float frequencySmallObstacles = 2f;
+    [SerializeField] private float frequencyMediumObstacles = 2f;
 
     public GameObject obstacle;
+    public GameObject[] SmallObstacleObjects;
+    public GameObject[] MediumObstacleObject;
+
+    private int randomInt;
+    private float obstacleSpeed;
+
 
     void Awake()
     {
@@ -22,16 +26,24 @@ public class Obstacles : MonoBehaviour
             return;
         }
 
-        Instance = this;      
-        InvokeRepeating("SpawnObstacleSprite", frequency_1, frequency_1);
-        InvokeRepeating("SpawnObstacleSprite", frequency_2, frequency_2);
-        InvokeRepeating("SpawnObstacleSprite", frequency_3, frequency_3);
+        Instance = this;
+        InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
+        InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, 1f);
     }
 
-    void SpawnObstacleSprite()
+    void SpawnSmallObstacles()
     {
-        float obstacleSpeed = Random.Range(1000f, 1600f);
+        obstacleSpeed = Random.Range(1000f, 1600f);
         Vector2 spawnPosition = SpawnLocation();
+        SelectRandomSmallObstacle();
+        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
+    }
+
+    void SpawnMediumObstacles()
+    {
+        obstacleSpeed = Random.Range(1000f, 1600f);
+        Vector2 spawnPosition = SpawnLocation();
+        SelectRandomMediumObstacle();
         Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
     }
 
@@ -40,4 +52,17 @@ public class Obstacles : MonoBehaviour
         float randYCoord = Random.Range(-13f, 13f);
         return new Vector2(30f, randYCoord);
     }
+
+    void SelectRandomSmallObstacle()
+    {
+        randomInt = Random.Range(0, SmallObstacleObjects.Length);
+        obstacle= SmallObstacleObjects[randomInt];
+    }
+
+    void SelectRandomMediumObstacle()
+    {
+        randomInt = Random.Range(0, MediumObstacleObject.Length);
+        obstacle = MediumObstacleObject[randomInt];
+    }
 }
+
