@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ShipMovement : MonoBehaviour
 {
-<<<<<<< HEAD
-    [SerializeField] float shipThrust = 0f;
-    
-=======
     [SerializeField] float shipThrust = 1100f;
->>>>>>> 0d2f1605fdcf6afe6cc7bbda67abd4fa4d325b9d
 
     Rigidbody2D rb;
     PlayerFuel playerFuel;
@@ -20,11 +15,7 @@ public class ShipMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
-       
-=======
         playerFuel = GetComponent<PlayerFuel>();
->>>>>>> 0d2f1605fdcf6afe6cc7bbda67abd4fa4d325b9d
     }
 
     // Update is called once per frame
@@ -32,7 +23,6 @@ public class ShipMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
-            OnGUI();
             PauseUnPauseGame();
         }
 
@@ -69,10 +59,6 @@ public class ShipMovement : MonoBehaviour
         rb.AddRelativeForce(direction * shipThrust * Time.deltaTime);
     }
 
-<<<<<<< HEAD
-    
-        
-=======
     bool DoesPlayerHaveFuel()
     {
         if (playerFuel.shipFuel >= 0)
@@ -110,5 +96,4 @@ public class ShipMovement : MonoBehaviour
         if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
             Debug.Log("Clicked the button with text");
     }
->>>>>>> 0d2f1605fdcf6afe6cc7bbda67abd4fa4d325b9d
 }
