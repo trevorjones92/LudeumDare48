@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ShipMovement : MonoBehaviour
 {
-
-
-
-    [SerializeField] float shipThrust = 1100f;
-
-
     [SerializeField] float shipThrust = 1100f;
 
     Rigidbody2D rb;
@@ -28,6 +22,7 @@ public class ShipMovement : MonoBehaviour
 
 
         playerFuel = GetComponent<PlayerFuel>();
+    }
 
     void Update()
     {
