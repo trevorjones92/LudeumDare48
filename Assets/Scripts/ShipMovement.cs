@@ -5,12 +5,14 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     [SerializeField] float shipThrust = 0f;
+    
 
     Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+       
     }
 
     // Update is called once per frame
@@ -42,4 +44,7 @@ public class ShipMovement : MonoBehaviour
     {
         rb.AddRelativeForce(direction * shipThrust * Time.deltaTime);
     }
+
+    
+        
 }

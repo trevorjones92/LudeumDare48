@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5711994447302115291}
   - component: {fileID: 1046188588263972425}
   - component: {fileID: 4884951933890041127}
-  - component: {fileID: 1677347401138585196}
+  - component: {fileID: -631786738209600278}
   m_Layer: 0
   m_Name: Obstacle_Asteroid_1_Medium
   m_TagString: Untagged
@@ -105,8 +105,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &1677347401138585196
-EdgeCollider2D:
+--- !u!61 &-631786738209600278
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,33 +119,15 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.87878686, y: 0.64699566}
-  - {x: -0.7884207, y: 0.75867444}
-  - {x: -0.5611648, y: 1.0063791}
-  - {x: -0.015123278, y: 0.9445118}
-  - {x: 0.09924842, y: 0.9065221}
-  - {x: 0.2890882, y: 0.72205186}
-  - {x: 0.55165327, y: 0.659395}
-  - {x: 0.89387864, y: 0.7474822}
-  - {x: 1.0867083, y: 0.6357984}
-  - {x: 1.2334467, y: 0.43676323}
-  - {x: 1.2243152, y: 0.23522921}
-  - {x: 1.0667747, y: -0.2149043}
-  - {x: 1.079859, y: -0.7392544}
-  - {x: 0.9143626, y: -0.8922402}
-  - {x: 0.64122504, y: -0.86033624}
-  - {x: 0.5121151, y: -0.875623}
-  - {x: 0.25723776, y: -0.72513604}
-  - {x: 0.0059821606, y: -0.72971946}
-  - {x: -0.20958686, y: -0.71870273}
-  - {x: -0.57327974, y: -0.5081891}
-  - {x: -0.62791216, y: -0.41532645}
-  - {x: -0.84185153, y: -0.25719735}
-  - {x: -0.9340828, y: 0.26243183}
-  - {x: -0.8989195, y: 0.6197442}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
