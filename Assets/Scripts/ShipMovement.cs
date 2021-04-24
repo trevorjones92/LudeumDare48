@@ -7,8 +7,11 @@ public class ShipMovement : MonoBehaviour
 {
 
 
+
     [SerializeField] float shipThrust = 1100f;
 
+
+    [SerializeField] float shipThrust = 1100f;
 
     Rigidbody2D rb;
     PlayerFuel playerFuel;
@@ -20,16 +23,16 @@ public class ShipMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
 
+
         playerFuel = GetComponent<PlayerFuel>();
 
-    }
 
-    // Update is called once per frame
+        playerFuel = GetComponent<PlayerFuel>();
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
-            
             PauseUnPauseGame();
         }
 
@@ -87,5 +90,19 @@ public class ShipMovement : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+    void OnGUI()
+    {
 
+        if (!btnTexture)
+        {
+            Debug.LogError("Please assign a texture on the inspector");
+            return;
+        }
+
+        if (GUI.Button(new Rect(10, 10, 50, 50), btnTexture))
+            Debug.Log("Clicked the button with an image");
+
+        if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
+            Debug.Log("Clicked the button with text");
+    }
 }
