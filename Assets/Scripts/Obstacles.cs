@@ -50,13 +50,13 @@ public class Obstacles : MonoBehaviour
     Vector2 SpawnLocation()
     {
         float randYCoord = Random.Range(-13f, 13f);
-        return new Vector2(30f, randYCoord);
+        return new Vector2(40f, randYCoord);
     }
 
     void SelectRandomSmallObstacle()
     {
         randomInt = Random.Range(0, SmallObstacleObjects.Length);
-        obstacle= SmallObstacleObjects[randomInt];
+        obstacle = SmallObstacleObjects[randomInt];
     }
 
     void SelectRandomMediumObstacle()
