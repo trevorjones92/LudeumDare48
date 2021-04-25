@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 1364911765}
   - component: {fileID: 3408386492376053322}
   - component: {fileID: 5979838890951982840}
+  - component: {fileID: 7522294510073187285}
   m_Layer: 0
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,3 +282,15 @@ MonoBehaviour:
   shipFuel: 100
   distanceTravelled: 0
   slider: {fileID: 0}
+--- !u!114 &7522294510073187285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3717558839431839627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324a95f159f7b8c439d706d36082ffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

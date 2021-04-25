@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 804242178284238115}
   m_Layer: 0
   m_Name: Obstacle_Asteroid_2_Small
-  m_TagString: Untagged
+  m_TagString: SpaceDebris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
