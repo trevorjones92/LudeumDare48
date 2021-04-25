@@ -9,9 +9,8 @@ public class PlayerFuel : MonoBehaviour
     [SerializeField] public float currentFuel;
     [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
-    public Slider slider;
-    
 
+    public Slider slider;
 
     public void DistanceEngine()
     {
@@ -20,11 +19,10 @@ public class PlayerFuel : MonoBehaviour
 
     public void ConsumeFuel()
     {
+
         shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
         currentFuel = shipFuel;
         Setfuel(currentFuel);
-
-
     }
     public void SetMaxFuel(float Fuel)
     {
