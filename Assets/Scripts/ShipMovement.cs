@@ -9,9 +9,8 @@ public class ShipMovement : MonoBehaviour
 
     Rigidbody2D rb;
     PlayerFuel playerFuel;
-    public GameObject pauseMenu;
 
-    // bool IsPaused = false;
+    public GameObject pauseMenu;
 
     void Start()
     {
@@ -53,16 +52,14 @@ public class ShipMovement : MonoBehaviour
             playerFuel.ConsumeFuel();
             rb.velocity = rb.velocity.normalized;
         }
-
-        playerFuel.DistanceEngine();
     }
 
-    void ApplyThrust(Vector2 direction)
+    private void ApplyThrust(Vector2 direction)
     {
         rb.AddRelativeForce(direction * shipThrust * Time.deltaTime);
     }
 
-    bool DoesPlayerHaveFuel()
+    private bool DoesPlayerHaveFuel()
     {
         if (playerFuel.shipFuel >= 0)
         {
@@ -71,7 +68,7 @@ public class ShipMovement : MonoBehaviour
         return false;
     }
 
-    void PauseGame()
+    private void PauseGame()
     {
         Time.timeScale = 0;
     }

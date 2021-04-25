@@ -16,20 +16,15 @@ public class PlayerFuel : MonoBehaviour
     public AudioClip audioClip;
     public AudioSource audioSource;
 
-    private void Start()
+    void Start()
+
     {
         Setfuel(shipFuel);
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void DistanceEngine()
-    {
-        distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
-    }
-
     public void ConsumeFuel()
     {
-
         shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
         currentFuel = shipFuel;
         Setfuel(currentFuel);
