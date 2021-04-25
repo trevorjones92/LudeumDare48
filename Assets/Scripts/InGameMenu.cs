@@ -12,7 +12,6 @@ public class InGameMenu : MonoBehaviour
     void Start()
     {
         contineuButton.onClick.AddListener(ContinueGame);
-        respawnButton.onClick.AddListener(Respawn);
         exitGameButton.onClick.AddListener(ExitGame);
     }
 
@@ -23,13 +22,11 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void Respawn()
-    {
-        SceneManager.LoadScene("MainScene");
-    }
-
     void ExitGame()
     {
+        pauseMenu.GetComponent<Canvas>().sortingOrder = 0;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 }
