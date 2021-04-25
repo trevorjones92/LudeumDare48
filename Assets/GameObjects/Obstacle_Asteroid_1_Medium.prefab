@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5711994447302115291}
   - component: {fileID: 1046188588263972425}
   - component: {fileID: 4884951933890041127}
-  - component: {fileID: -631786738209600278}
+  - component: {fileID: -1506273018619354230}
   m_Layer: 0
   m_Name: Obstacle_Asteroid_1_Medium
   m_TagString: SpaceDebris
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7112657733650854445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0.0415, z: 0}
+  m_LocalScale: {x: 2.025, y: 1.9676, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-631786738209600278
+--- !u!61 &-1506273018619354230
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -51,7 +51,9 @@ MonoBehaviour:
   - {fileID: 3719598853030283530, guid: 4bebf5adda37ab74293ead8a2f1fa6ab, type: 3}
   - {fileID: 2282365861931852778, guid: e29ad650335b5d445b767252ee963df0, type: 3}
   - {fileID: 1604921369747186166, guid: b92fd4c536fe100469b9a3786b648b52, type: 3}
+  - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
   MediumObstacleObject:
   - {fileID: 7112657733650854445, guid: ed537b480f2e0f34b8a7f1e0d07d71e5, type: 3}
   - {fileID: 3719598853030283530, guid: 9d72346101e5bc541bf4e7e570dbbab1, type: 3}
   - {fileID: 2282365861931852778, guid: 3acd3032ca7b63c40bbe513da61c1168, type: 3}
+  - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}

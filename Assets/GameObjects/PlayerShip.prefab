@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 3717558839431839627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77bca74c011324a409354d6405d8c34a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -294,3 +294,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324a95f159f7b8c439d706d36082ffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  audioSource: {fileID: 0}
