@@ -17,7 +17,6 @@ public class ShipMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerFuel = GetComponent<PlayerFuel>();
-        playerFuel = GetComponent<PlayerFuel>();
     }
 
     void Update()
