@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipThrust: 1100
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 2175184473449107217, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
 --- !u!114 &5979838890951982840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,10 @@ MonoBehaviour:
   currentFuel: 0
   shipFuel: 100
   distanceTravelled: 0
+  toggleCollision: 1
   slider: {fileID: 0}
+  audioClip: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &7522294510073187285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,5 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324a95f159f7b8c439d706d36082ffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleCollision: 1
   audioClip: {fileID: 0}
   audioSource: {fileID: 0}

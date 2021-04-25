@@ -29,8 +29,5 @@ public class OnCollision : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    void test()
-    {
 
-    }
 }
