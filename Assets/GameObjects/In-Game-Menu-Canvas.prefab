@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2175184473449107309}
   - component: {fileID: 2175184473449107218}
   - component: {fileID: 2175184473449107219}
-  - component: {fileID: 2175184473449107216}
+  - component: {fileID: 4965728426772943575}
   m_Layer: 5
   m_Name: In-Game-Menu-Canvas
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2175184473449107216
+--- !u!114 &4965728426772943575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b641552c5fa9b0443be1ba5b12fc309b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contineuButton: {fileID: 2175184474965702617}
+  contineuButton: {fileID: 0}
   respawnButton: {fileID: 0}
-  exitGameButton: {fileID: 2175184474502474011}
-  pauseMenu: {fileID: 2175184473449107217}
+  exitGameButton: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!1 &2175184473512459411
 GameObject:
   m_ObjectHideFlags: 0

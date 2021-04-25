@@ -23,7 +23,7 @@ public class ShipMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.GetComponent<Canvas>().sortingOrder = 1;
+            // pauseMenu.GetComponent<Canvas>().sortingOrder = 1;
             pauseMenu.SetActive(true);
             PauseGame();
         }
