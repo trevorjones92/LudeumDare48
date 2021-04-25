@@ -12,6 +12,11 @@ public class PlayerFuel : MonoBehaviour
 
     public Slider slider;
 
+    private void Start()
+    {
+        Setfuel(shipFuel);
+    }
+
     public void DistanceEngine()
     {
         distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
