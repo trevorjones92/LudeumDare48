@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InGameMenu : MonoBehaviour
 {
-    public Button contineuButton, respawnButton, exitGameButton;
+    public Button contineuButton, exitGameButton;
     public GameObject pauseMenu;
 
     void Start()
@@ -17,14 +17,12 @@ public class InGameMenu : MonoBehaviour
 
     void ContinueGame()
     {
-        pauseMenu.GetComponent<Canvas>().sortingOrder = 0;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
 
     void ExitGame()
     {
-        pauseMenu.GetComponent<Canvas>().sortingOrder = 0;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
