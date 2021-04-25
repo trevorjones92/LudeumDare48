@@ -25,7 +25,10 @@ public class InGameMenu : MonoBehaviour
 
     void Respawn()
     {
+        pauseMenu.GetComponent<Canvas>().sortingOrder = 0;
+        pauseMenu.SetActive(false);
         SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1;
     }
 
     void ExitGame()
