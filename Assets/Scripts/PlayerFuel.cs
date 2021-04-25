@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerFuel : MonoBehaviour
 {
+    [SerializeField] private float fuelUsageRate = .05f;
+    [SerializeField] public float currentFuel;
     [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
+
     public Slider slider;
 
     public void DistanceEngine()
@@ -16,17 +19,19 @@ public class PlayerFuel : MonoBehaviour
 
     public void ConsumeFuel()
     {
-        shipFuel = shipFuel - .01f - Mathf.Epsilon;
-        Setfuel(shipFuel);
+
+        shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
+        currentFuel = shipFuel;
+        Setfuel(currentFuel);
     }
-    public void SetMaxFuel(float shipFuel)
+    public void SetMaxFuel(float Fuel)
     {
-        slider.maxValue = shipFuel;
-        slider.value = shipFuel;
+        slider.maxValue = Fuel;
+        slider.value = Fuel;
     }
 
-    public void Setfuel(float shipFuel)
+    public void Setfuel(float Fuel)
     {
-        slider.value = shipFuel;
+        slider.value = Fuel;
     }
 }
