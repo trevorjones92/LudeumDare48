@@ -16,6 +16,8 @@ public class Obstacles : MonoBehaviour
     [SerializeField] private float obstacleSpeed;
     private int randomInt;
 
+    public bool IsNextLevelOfDifficulty = false;
+
     /// <summary>
     /// This starts on game start instance. Invokes methods to run evert X amount of seconds.
     /// </summary>
@@ -37,19 +39,18 @@ public class Obstacles : MonoBehaviour
     {
         DistanceTracker();
         SpawnRateOverTime();
+        if (IsNextLevelOfDifficulty)
+        {
+            CancelInvoke();
+
+            InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
+            InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
+            IsNextLevelOfDifficulty = false;
+        }
 
     }
 
-    /// <summary>
-    /// Spawns small obstacles in the game. These are gameobjects in the GameObjects folder.
-    /// </summary>
-    void SpawnSmallObstacles()
-    {
-        obstacleSpeed = ObstacleSpeedOverTime();
-        Vector2 spawnPosition = SpawnLocation();
-        SelectRandomSmallObstacle();
-        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
-    }
+  
 
     /// <summary>
     /// Spawns medium obstacles in the game. These are gameobjects in the GameObjects folder.
@@ -72,18 +73,7 @@ public class Obstacles : MonoBehaviour
         return new Vector2(40f, randYCoord);
     }
 
-    /// <summary>
-    /// Randomly selects a small sized obstacle from a range of given gameobjects
-    /// </summary>
-    void SelectRandomSmallObstacle()
-    {
-        randomInt = Random.Range(0, SmallObstacleObjects.Length);
-        obstacle = SmallObstacleObjects[randomInt];
-    }
-
-    /// <summary>
-    /// Randomly selects a medium sized obstacle from a range of given gameobjects
-    /// </summary>
+  
     void SelectRandomMediumObstacle()
     {
         randomInt = Random.Range(0, MediumObstacleObject.Length);
@@ -96,32 +86,32 @@ public class Obstacles : MonoBehaviour
         return distanceTravelled;
     }
 
+
+    // Getting called every frame. Constanly invoking cancel invoke.
     void SpawnRateOverTime()
     {
         if (distanceTravelled < 100f)
         {
-            frequencySmallObstacles = 1.5f;
-            frequencyMediumObstacles = 2.5f;
-        }
-        else if (distanceTravelled > 100f && distanceTravelled < 300f)
-        {
             frequencySmallObstacles = 1f;
-            frequencyMediumObstacles = 2.5f;
-        }
-        else if (distanceTravelled > 300f && distanceTravelled < 500f)
-        {
-            frequencySmallObstacles = .75f;
             frequencyMediumObstacles = 2f;
         }
-        else if (distanceTravelled > 500f && distanceTravelled < 800f)
+        else if (distanceTravelled >= 300f && distanceTravelled <= 301f)
         {
-            frequencySmallObstacles = .6f;
-            frequencyMediumObstacles = 1.75f;
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .8f;
+            frequencyMediumObstacles = 1.5f;
         }
-        else
+        else if (distanceTravelled >= 500f && distanceTravelled <= 501f)
         {
-            frequencySmallObstacles = .3f;
-            frequencyMediumObstacles = 1;
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .6f;
+            frequencyMediumObstacles = 1f;
+        }
+        else if (distanceTravelled >= 800f && distanceTravelled <= 801f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
         }
     }
 
