@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FuelBar : MonoBehaviour
+public class fuelBar : MonoBehaviour
 {
     public Slider slider;
 
