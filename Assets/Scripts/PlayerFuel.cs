@@ -8,23 +8,16 @@ public class PlayerFuel : MonoBehaviour
     [SerializeField] private float fuelUsageRate = .05f;
     [SerializeField] public float currentFuel;
     [SerializeField] public float shipFuel = 200f;
-    [SerializeField] public float distanceTravelled = 0f;
 
     public Slider slider;
 
-    private void Start()
+    void Start()
     {
         Setfuel(shipFuel);
     }
 
-    public void DistanceEngine()
-    {
-        distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
-    }
-
     public void ConsumeFuel()
     {
-
         shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
         currentFuel = shipFuel;
         Setfuel(currentFuel);
