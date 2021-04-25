@@ -17,6 +17,7 @@ public class ShipMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerFuel = GetComponent<PlayerFuel>();
+        pauseMenu.SetActive(false);
     }
 
     void Update()
