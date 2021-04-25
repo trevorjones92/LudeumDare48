@@ -37,6 +37,7 @@ public class Obstacles : MonoBehaviour
     {
         DistanceTracker();
         SpawnRateOverTime();
+
     }
 
     /// <summary>

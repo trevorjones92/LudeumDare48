@@ -9,24 +9,35 @@ public class Weapon : MonoBehaviour
     public int Bullets = 5;
 
     public AudioSource audioSource;
-    public AudioClip audioClip;
+    public AudioClip Shooting;
+    public AudioClip Reloading;
     // Update is called once per frame
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Bullets > 0) 
+        if (Input.GetButtonDown("Fire1") && Bullets > 0)
         {
             Shoot();
-            audioSource.PlayOneShot(audioClip);
             Bullets = Bullets - 1;
-            
+            audioSource.PlayOneShot(Shooting);
         }
     }
     void Shoot()
     {
-        Instantiate(BulletPrefab , firePoint.position , firePoint.rotation);
+        Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ammo" )
+        {
+            Debug.Log("Ammo canister Hit");
+            audioSource.PlayOneShot(Reloading);
+            Bullets = Bullets + 5;
+            Destroy(collision.gameObject);
+        }
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SpaceDebris
   - Ship
+  - Fuel
+  - Ammo
   layers:
   - Default
   - TransparentFX

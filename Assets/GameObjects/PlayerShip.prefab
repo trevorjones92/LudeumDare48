@@ -298,5 +298,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleCollision: 1
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 7bf395bd308310e4aac2168faa1791cf, type: 3}
   audioSource: {fileID: 0}
