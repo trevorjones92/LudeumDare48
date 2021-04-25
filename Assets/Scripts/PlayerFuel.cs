@@ -8,7 +8,7 @@ public class PlayerFuel : MonoBehaviour
     [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
 
-    FuelBar fuelbar;
+    FuelBar fuelBar;
     
     public void DistanceEngine()
     {
@@ -18,6 +18,6 @@ public class PlayerFuel : MonoBehaviour
     public void ConsumeFuel()
     {
         shipFuel = shipFuel - .01f - Mathf.Epsilon;
-        fuelbar.Setfuel(shipFuel);
+        fuelBar.Setfuel(shipFuel);
     }
 }

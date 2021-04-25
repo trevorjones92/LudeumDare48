@@ -11,7 +11,7 @@ public class ShipMovement : MonoBehaviour
     PlayerFuel playerFuel;
     public GameObject pauseMenu;
 
-    bool IsPaused = false;
+    // bool IsPaused = false;
 
     void Start()
     {
