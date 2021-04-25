@@ -9,17 +9,14 @@ public class ShipMovement : MonoBehaviour
 
     Rigidbody2D rb;
     PlayerFuel playerFuel;
+    public GameObject pauseMenu;
+
     bool IsPaused = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-
-
         playerFuel = GetComponent<PlayerFuel>();
-
-
         playerFuel = GetComponent<PlayerFuel>();
     }
 
@@ -27,7 +24,9 @@ public class ShipMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseUnPauseGame();
+            pauseMenu.GetComponent<Canvas>().sortingOrder = 1;
+            pauseMenu.SetActive(true);
+            PauseGame();
         }
 
         if (Input.GetKey(KeyCode.D) && DoesPlayerHaveFuel())
@@ -72,16 +71,8 @@ public class ShipMovement : MonoBehaviour
         return false;
     }
 
-    void PauseUnPauseGame()
+    void PauseGame()
     {
-        IsPaused = !IsPaused;
-        if (IsPaused)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        Time.timeScale = 0;
     }
 }

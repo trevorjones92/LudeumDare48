@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InGameMenu : MonoBehaviour
 {
     public Button contineuButton, respawnButton, exitGameButton;
+    public GameObject pauseMenu;
 
     void Start()
     {
@@ -17,7 +18,9 @@ public class InGameMenu : MonoBehaviour
 
     void ContinueGame()
     {
-        // Unpause Game
+        pauseMenu.GetComponent<Canvas>().sortingOrder = 0;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     void Respawn()
