@@ -701,6 +701,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: In-Game-Menu-Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4921757910024268176, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921757910024268176, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7747547845565777978, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
       propertyPath: m_Camera
       value: 
@@ -743,6 +751,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441380891805091561, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441380891805091561, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441380891805091561, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441380891805091561, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8441380891805091561, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
@@ -1177,6 +1197,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4265423852860664283, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265423852860664283, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265423852860664283, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265423852860664283, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1227,6 +1259,14 @@ PrefabInstance:
     - target: {fileID: 4669286339172159203, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_Name
       value: StatsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700969691336436245, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700969691336436245, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6839655864891945322, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_Camera
@@ -1444,6 +1484,22 @@ PrefabInstance:
       propertyPath: textForDistance
       value: 
       objectReference: {fileID: 1110261507}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 4430401533459961392, guid: 54b7dbebbb4ce9041a41d481437d0a32, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: SmallObstacleObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 4430401533459961392, guid: 54b7dbebbb4ce9041a41d481437d0a32, type: 3}
     - target: {fileID: 4382397359275570455, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: m_RootOrder
       value: 2
