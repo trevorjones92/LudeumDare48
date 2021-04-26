@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Obstacles : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Obstacles : MonoBehaviour
     public GameObject obstacle;
     public GameObject[] SmallObstacleObjects;
     public GameObject[] MediumObstacleObject;
+    public Text textForDistance;
     public bool IsNextLevelOfDifficulty = false;
     private int randomInt;
 
@@ -107,6 +109,7 @@ public class Obstacles : MonoBehaviour
     public float DistanceTracker()
     {
         distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
+        textForDistance.text = (Mathf.Round(distanceTravelled * 100) / 100).ToString();
         return distanceTravelled;
     }
 
