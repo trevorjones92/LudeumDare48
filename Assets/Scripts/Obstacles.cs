@@ -115,19 +115,73 @@ public class Obstacles : MonoBehaviour
             frequencySmallObstacles = 1f;
             frequencyMediumObstacles = 2f;
         }
+        else if (distanceTravelled >= 150f && distanceTravelled <= 151f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .8f;
+            frequencyMediumObstacles = 1.5f;
+        }
+        else if (distanceTravelled >= 201f && distanceTravelled <= 201f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .8f;
+            frequencyMediumObstacles = 1.5f;
+        }
+        else if (distanceTravelled >= 250f && distanceTravelled <= 251f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .8f;
+            frequencyMediumObstacles = 1.5f;
+        }
         else if (distanceTravelled >= 300f && distanceTravelled <= 301f)
         {
             IsNextLevelOfDifficulty = true;
             frequencySmallObstacles = .8f;
             frequencyMediumObstacles = 1.5f;
         }
-        else if (distanceTravelled >= 500f && distanceTravelled <= 501f)
+        else if (distanceTravelled >= 350f && distanceTravelled <= 351f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .8f;
+            frequencyMediumObstacles = 1.5f;
+        }
+        else if (distanceTravelled >= 400f && distanceTravelled <= 401f)
         {
             IsNextLevelOfDifficulty = true;
             frequencySmallObstacles = .6f;
             frequencyMediumObstacles = 1f;
         }
-        else if (distanceTravelled >= 800f && distanceTravelled <= 801f)
+        else if (distanceTravelled >= 450f && distanceTravelled <= 451f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
+        }
+        else if (distanceTravelled >= 500f && distanceTravelled <= 501f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
+        }
+        else if (distanceTravelled >= 550f && distanceTravelled <= 551f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
+        }
+        else if (distanceTravelled >= 600f && distanceTravelled <= 601f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
+        }
+        else if (distanceTravelled >= 650f && distanceTravelled <= 651f)
+        {
+            IsNextLevelOfDifficulty = true;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = .8f;
+        }
+        else if (distanceTravelled >= 700f && distanceTravelled <= 701f)
         {
             IsNextLevelOfDifficulty = true;
             frequencySmallObstacles = .4f;
@@ -139,27 +193,27 @@ public class Obstacles : MonoBehaviour
     {
         if (distanceTravelled < 100f)
         {
-            obstacleSpeed = Random.Range(1500f, 1700f);
+            obstacleSpeed = Random.Range(1800f, 2000f);
             return obstacleSpeed;
         }
-        else if (distanceTravelled > 100f && distanceTravelled < 300f)
+        else if (distanceTravelled > 100f && distanceTravelled < 200f)
         {
-            obstacleSpeed = Random.Range(1700f, 1900f);
+            obstacleSpeed = Random.Range(2400f, 2800f);
             return obstacleSpeed;
         }
-        else if (distanceTravelled > 300f && distanceTravelled < 500f)
+        else if (distanceTravelled > 250f && distanceTravelled < 300f)
         {
-            obstacleSpeed = Random.Range(2100f, 2300f);
+            obstacleSpeed = Random.Range(3200f, 3600f);
             return obstacleSpeed;
         }
         else if (distanceTravelled > 500f && distanceTravelled < 700f)
         {
-            obstacleSpeed = Random.Range(2300f, 2600f);
+            obstacleSpeed = Random.Range(4000f, 4600f);
             return obstacleSpeed;
         }
         else
         {
-            obstacleSpeed = 3000f;
+            obstacleSpeed = 5000f;
             return obstacleSpeed;
         }
     }

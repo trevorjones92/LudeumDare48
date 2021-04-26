@@ -260,6 +260,14 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1060772510}
+    - target: {fileID: 5979838890951982840, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
+      propertyPath: toggleCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979838890951982840, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
+      propertyPath: distanceTravelled
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522294510073187285, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
       propertyPath: audioClip
       value: 
@@ -268,6 +276,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1060772510}
+    - target: {fileID: 7522294510073187285, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
+      propertyPath: toggleCollision
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
 --- !u!1 &295217848 stripped
@@ -1023,6 +1035,7 @@ MonoBehaviour:
   - {fileID: 2282365861931852778, guid: e29ad650335b5d445b767252ee963df0, type: 3}
   - {fileID: 1604921369747186166, guid: b92fd4c536fe100469b9a3786b648b52, type: 3}
   - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+  - {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
   MediumObstacleObject:
   - {fileID: 7112657733650854445, guid: ed537b480f2e0f34b8a7f1e0d07d71e5, type: 3}
   - {fileID: 3719598853030283530, guid: 9d72346101e5bc541bf4e7e570dbbab1, type: 3}
@@ -1031,10 +1044,12 @@ MonoBehaviour:
   - {fileID: 1604921369747186166, guid: b92fd4c536fe100469b9a3786b648b52, type: 3}
   - {fileID: 8473148990921313416, guid: 89a2a8941c43ab740a3f59c982d04934, type: 3}
   - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+  IsNextLevelOfDifficulty: 0
   frequencySmallObstacles: 2
-  frequencyMediumObstacles: 0
-  distanceTravelled: 0
-  obstacleSpeed: 0
+  frequencyMediumObstacles: 3
+  distanceTravelled: 1
+  obstacleSpeed: 1500
+  distanceIncrementer: 0
 --- !u!4 &889602341
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,6 +1366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1017984069599931767, guid: b28de0afe8f98e74abb7ce65273d76d8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1017984069921304037, guid: b28de0afe8f98e74abb7ce65273d76d8, type: 3}
       propertyPath: m_Camera
       value: 
