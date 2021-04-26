@@ -12,10 +12,13 @@ public class Obstacles : MonoBehaviour
     public bool IsNextLevelOfDifficulty = false;
     private int randomInt;
 
+    public float obstacleSpeed = 1000f;
+    public float minObstacleSpeed = 200f;
+    public float maxObstacleSpeed = 200f;
+
     [SerializeField] public float frequencySmallObstacles = 2f;
-    [SerializeField] public float frequencyMediumObstacles = 3f;
+    [SerializeField] public float frequencyMediumObstacles = 2.5f;
     [SerializeField] public float distanceTravelled = 0f;
-    [SerializeField] public float obstacleSpeed = 1500f;
     [SerializeField] public float distanceIncrementer = 0f;
 
     /// <summary>
@@ -33,7 +36,7 @@ public class Obstacles : MonoBehaviour
 
         InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
         InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
-        InvokeRepeating("IncreaseLevelDifficulty", 10f, 10f);
+        InvokeRepeating("IncreaseLevelDifficulty", 1f, 10f);
     }
 
     void Update()
@@ -56,7 +59,7 @@ public class Obstacles : MonoBehaviour
     /// </summary>
     void SpawnSmallObstacles()
     {
-        obstacleSpeed = ObstacleSpeedOverTime();
+        obstacleSpeed = ObstacleSpeed();
         Vector2 spawnPosition = SpawnLocation();
         SelectRandomSmallObstacle();
         Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
@@ -67,7 +70,7 @@ public class Obstacles : MonoBehaviour
     /// </summary>
     void SpawnMediumObstacles()
     {
-        obstacleSpeed = ObstacleSpeedOverTime();
+        obstacleSpeed = ObstacleSpeed();
         Vector2 spawnPosition = SpawnLocation();
         SelectRandomMediumObstacle();
         Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
@@ -110,7 +113,7 @@ public class Obstacles : MonoBehaviour
     void IncreaseLevelDifficulty()
     {
         IncreaseObstacleSpawnRate();
-        ObstacleSpeedOverTime();
+        IncreaseObstacleSpeed();
     }
 
     void IncreaseObstacleSpawnRate()
@@ -120,22 +123,32 @@ public class Obstacles : MonoBehaviour
         if (frequencySmallObstacles >= .2f && frequencyMediumObstacles >= .2f)
         {
             frequencySmallObstacles = frequencySmallObstacles - .2f;
-            frequencyMediumObstacles = frequencyMediumObstacles - .2f;
+            frequencyMediumObstacles = frequencyMediumObstacles - .1f;
         }
     }
 
-    float ObstacleSpeedOverTime()
+    float ObstacleSpeed()
     {
-        if (obstacleSpeed <= 4000f)
+        obstacleSpeed = Random.Range(minObstacleSpeed, maxObstacleSpeed);
+        return obstacleSpeed;
+    }
+
+    void IncreaseObstacleSpeed()
+    {
+        if (maxObstacleSpeed < 500f)
         {
-            obstacleSpeed += 300f;
-            obstacleSpeed = Random.Range(obstacleSpeed, obstacleSpeed + 300f);
-            return obstacleSpeed;
+            minObstacleSpeed += 50f;
+            maxObstacleSpeed += 100f;
         }
-        else
+        if (maxObstacleSpeed < 650f)
         {
-            obstacleSpeed = Random.Range(obstacleSpeed, obstacleSpeed + 300f);
-            return obstacleSpeed;
+            minObstacleSpeed += 15f;
+            maxObstacleSpeed += 25f;
+        }
+        if (maxObstacleSpeed < 800f)
+        {
+            minObstacleSpeed += 10f;
+            maxObstacleSpeed += 20f;
         }
     }
 }

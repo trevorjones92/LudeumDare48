@@ -24,9 +24,12 @@ public class PlayerFuel : MonoBehaviour
 
     public void ConsumeFuel()
     {
-        shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
-        currentFuel = shipFuel;
-        Setfuel(currentFuel);
+        if (Time.timeScale != 0)
+        {
+            shipFuel = shipFuel - fuelUsageRate - Mathf.Epsilon;
+            currentFuel = shipFuel;
+            Setfuel(currentFuel);
+        }
     }
     public void SetMaxFuel(float Fuel)
     {
@@ -42,7 +45,6 @@ public class PlayerFuel : MonoBehaviour
     {
         if (collision.gameObject.tag == "Fuel" && toggleCollision)
         {
-            Debug.Log("Hit fuel canister");
             audioSource.PlayOneShot(audioClip);
             shipFuel = (currentFuel + 50f);
             Destroy(collision.gameObject);

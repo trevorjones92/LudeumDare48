@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &11592446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3471657890046296547, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+  m_PrefabInstance: {fileID: 866072738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88193308
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 1060772510}
     - target: {fileID: 7522294510073187285, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
       propertyPath: toggleCollision
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449f12456dbd89a48b7108890078b9fd, type: 3}
@@ -317,11 +328,37 @@ MonoBehaviour:
   toggleCollision: 1
   audioClip: {fileID: 8300000, guid: f537c67b143aae44395adccb1868c498, type: 3}
   audioSource: {fileID: 1060772510}
+--- !u!114 &295217859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295217848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b641552c5fa9b0443be1ba5b12fc309b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contineuButton: {fileID: 11592446}
+  exitGameButton: {fileID: 409813819}
+  pauseMenu: {fileID: 1509227111}
 --- !u!4 &390767819 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2959702333447006328, guid: 7497bdf62a03b294c87e6c6eaee7fc66, type: 3}
   m_PrefabInstance: {fileID: 1656156930}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &409813819 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3471657891136729612, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+  m_PrefabInstance: {fileID: 866072738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &533522703
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +930,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 354
       objectReference: {fileID: 0}
+    - target: {fileID: 3471657890481836645, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3471657890481836697, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -941,7 +982,8 @@ PrefabInstance:
       propertyPath: exitGameButton
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3471657890481836645, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
 --- !u!1 &911885262
 GameObject:
@@ -1474,8 +1516,12 @@ PrefabInstance:
       value: ObstacleSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: obstacleSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: frequencyMediumObstacles
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: MediumObstacleObject.Array.size

@@ -13,6 +13,16 @@ public class InGameMenu : MonoBehaviour
     {
         contineuButton.onClick.AddListener(ContinueGame);
         exitGameButton.onClick.AddListener(ExitGame);
+        pauseMenu.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            PauseGame();
+        }
     }
 
     void ContinueGame()
@@ -26,5 +36,10 @@ public class InGameMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
     }
 }

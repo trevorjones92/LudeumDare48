@@ -8,24 +8,15 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] float shipThrust = 1100f;
     Rigidbody2D rb;
     PlayerFuel playerFuel;
-    public GameObject pauseMenu;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerFuel = GetComponent<PlayerFuel>();
-        pauseMenu.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
-        {
-            // pauseMenu.GetComponent<Canvas>().sortingOrder = 1;
-            pauseMenu.SetActive(true);
-            PauseGame();
-        }
-
         if (Input.GetKey(KeyCode.D) && DoesPlayerHaveFuel())
         {
             ApplyThrust(Vector2.right);
@@ -64,10 +55,5 @@ public class ShipMovement : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    private void PauseGame()
-    {
-        Time.timeScale = 0;
     }
 }
