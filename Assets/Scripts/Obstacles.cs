@@ -18,10 +18,11 @@ public class Obstacles : MonoBehaviour
     public float minObstacleSpeed = 200f;
     public float maxObstacleSpeed = 200f;
 
+    public static string score;
+
     [SerializeField] public float frequencySmallObstacles = 2f;
     [SerializeField] public float frequencyMediumObstacles = 2.5f;
     [SerializeField] public float distanceTravelled = 0f;
-    [SerializeField] public float distanceIncrementer = 0f;
 
     /// <summary>
     /// This starts on game start instance. Invokes methods to run evert X amount of seconds.
@@ -110,6 +111,8 @@ public class Obstacles : MonoBehaviour
     {
         distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
         textForDistance.text = (Mathf.Round(distanceTravelled * 100) / 100).ToString();
+        score = (Mathf.Round(distanceTravelled * 100) / 100).ToString();
+
         return distanceTravelled;
     }
 
