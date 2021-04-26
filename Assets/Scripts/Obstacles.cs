@@ -50,7 +50,16 @@ public class Obstacles : MonoBehaviour
 
     }
 
-  
+    /// <summary>
+    /// Spawns medium obstacles in the game. These are gameobjects in the GameObjects folder.
+    /// </summary>
+    void SpawnSmallObstacles()
+    {
+        obstacleSpeed = ObstacleSpeedOverTime();
+        Vector2 spawnPosition = SpawnLocation();
+        SelectRandomMediumObstacle();
+        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
+    }
 
     /// <summary>
     /// Spawns medium obstacles in the game. These are gameobjects in the GameObjects folder.
