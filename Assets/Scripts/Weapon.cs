@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject BulletPrefab;
-    public int Bullets = 5;
-
     public AudioSource audioSource;
     public AudioClip Shooting;
     public AudioClip Reloading;
-    // Update is called once per frame
-    private void Start()
+    public Text bulletCount;
+    public int bullets = 5;
+
+
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Bullets > 0)
+        if (Input.GetButtonDown("Fire1") && bullets > 0)
         {
             Shoot();
-            Bullets = Bullets - 1;
+            bullets = bullets - 1;
             audioSource.PlayOneShot(Shooting);
         }
+        bulletCount.text = bullets.ToString();
     }
     void Shoot()
     {
@@ -35,7 +38,7 @@ public class Weapon : MonoBehaviour
         if (collision.gameObject.tag == "Ammo" )
         {
             audioSource.PlayOneShot(Reloading);
-            Bullets = Bullets + 5;
+            bullets = bullets + 5;
             Destroy(collision.gameObject);
         }
     }
