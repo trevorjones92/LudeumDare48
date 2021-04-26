@@ -1,5 +1,5 @@
 # LudeumDare48
-This is a repo for our LudumDare48 gamejame game.
+This is a repo for our LudumDare48 GameJam game.
 
 The theme for this year was "Deeper and Deeper". With that in mind, we set out with the goal to create a simple game to completion. 
 
