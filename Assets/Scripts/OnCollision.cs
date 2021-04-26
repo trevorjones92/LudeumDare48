@@ -14,7 +14,6 @@ public class OnCollision : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "SpaceDebris" && toggleCollision)

@@ -11,5 +11,4 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
     }
-
 }  
