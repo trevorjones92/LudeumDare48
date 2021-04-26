@@ -1477,6 +1477,26 @@ PrefabInstance:
       propertyPath: frequencyMediumObstacles
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: SmallObstacleObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: MediumObstacleObject.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: SmallObstacleObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
     - target: {fileID: 4382397359275570455, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: m_RootOrder
       value: 3

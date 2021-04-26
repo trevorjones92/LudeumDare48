@@ -9,14 +9,14 @@ public class Obstacles : MonoBehaviour
     public GameObject obstacle;
     public GameObject[] SmallObstacleObjects;
     public GameObject[] MediumObstacleObject;
-
-    [SerializeField] private float frequencySmallObstacles = 1.2f;
-    [SerializeField] private float frequencyMediumObstacles = 2.2f;
-    [SerializeField] private float distanceTravelled = 0f;
-    [SerializeField] private float obstacleSpeed;
+    public bool IsNextLevelOfDifficulty = false;
     private int randomInt;
 
-    public bool IsNextLevelOfDifficulty = false;
+    [SerializeField] public float frequencySmallObstacles = 2f;
+    [SerializeField] public float frequencyMediumObstacles = 3f;
+    [SerializeField] public float distanceTravelled = 0f;
+    [SerializeField] public float obstacleSpeed = 1500f;
+    [SerializeField] public float distanceIncrementer = 0f;
 
     /// <summary>
     /// This starts on game start instance. Invokes methods to run evert X amount of seconds.
@@ -33,12 +33,12 @@ public class Obstacles : MonoBehaviour
 
         InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
         InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
+        InvokeRepeating("IncreaseLevelDifficulty", 10f, 10f);
     }
 
     void Update()
     {
         DistanceTracker();
-        SpawnRateOverTime();
 
         if (IsNextLevelOfDifficulty)
         {
@@ -46,12 +46,13 @@ public class Obstacles : MonoBehaviour
 
             InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
             InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
+            InvokeRepeating("IncreaseLevelDifficulty", 10f, 10f);
             IsNextLevelOfDifficulty = false;
         }
     }
 
     /// <summary>
-    /// Spawns medium obstacles in the game. These are gameobjects in the GameObjects folder.
+    /// Spawns small obstacles in the game. These are gameobjects in the GameObjects folder.
     /// </summary>
     void SpawnSmallObstacles()
     {
@@ -82,12 +83,18 @@ public class Obstacles : MonoBehaviour
         return new Vector2(40f, randYCoord);
     }
 
+    /// <summary>
+    /// Randomly selects a small sized obstacle from a range of given gameobjects
+    /// </summary>
     void SelectRandomSmallObstacle()
     {
         randomInt = Random.Range(0, SmallObstacleObjects.Length);
         obstacle = SmallObstacleObjects[randomInt];
     }
 
+    /// <summary>
+    /// Randomly selects a medium sized obstacle from a range of given gameobjects
+    /// </summary>
     void SelectRandomMediumObstacle()
     {
         randomInt = Random.Range(0, MediumObstacleObject.Length);
@@ -100,89 +107,34 @@ public class Obstacles : MonoBehaviour
         return distanceTravelled;
     }
 
-
-    // Getting called every frame. Constanly invoking cancel invoke.
-    void SpawnRateOverTime()
+    void IncreaseLevelDifficulty()
     {
-        if (distanceTravelled < 100f)
+        IncreaseObstacleSpawnRate();
+        ObstacleSpeedOverTime();
+    }
+
+    void IncreaseObstacleSpawnRate()
+    {
+        IsNextLevelOfDifficulty = true;
+
+        if (frequencySmallObstacles >= .2f && frequencyMediumObstacles >= .2f)
         {
-           //
-        }
-        else if (distanceTravelled >= 150f && distanceTravelled <= 151f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = 1f;
-            frequencyMediumObstacles = 2f;
-        }
-        else if (distanceTravelled >= 201f && distanceTravelled <= 201f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.8f;
-        }
-        else if (distanceTravelled >= 250f && distanceTravelled <= 251f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .6f;
-            frequencyMediumObstacles = 1.6f;
-        }
-        else if (distanceTravelled >= 300f && distanceTravelled <= 301f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = 1.4f;
-        }
-        else if (distanceTravelled >= 350f && distanceTravelled <= 351f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .2f;
-            frequencyMediumObstacles = 1.2f;
-        }
-        else if (distanceTravelled >= 400f && distanceTravelled <= 401f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .2f;
-            frequencyMediumObstacles = 1f;
-        }
-        else if (distanceTravelled >= 450f && distanceTravelled <= 451f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .2f;
-            frequencyMediumObstacles = .6f;
-        }
-        else if (distanceTravelled >= 700f && distanceTravelled <= 701f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .2f;
-            frequencyMediumObstacles = .4f;
+            frequencySmallObstacles = frequencySmallObstacles - .2f;
+            frequencyMediumObstacles = frequencyMediumObstacles - .2f;
         }
     }
 
     float ObstacleSpeedOverTime()
     {
-        if (distanceTravelled < 100f)
+        if (obstacleSpeed <= 4000f)
         {
-            obstacleSpeed = Random.Range(1800f, 2000f);
-            return obstacleSpeed;
-        }
-        else if (distanceTravelled > 100f && distanceTravelled < 200f)
-        {
-            obstacleSpeed = Random.Range(2400f, 2800f);
-            return obstacleSpeed;
-        }
-        else if (distanceTravelled > 250f && distanceTravelled < 300f)
-        {
-            obstacleSpeed = Random.Range(3200f, 3600f);
-            return obstacleSpeed;
-        }
-        else if (distanceTravelled > 500f && distanceTravelled < 700f)
-        {
-            obstacleSpeed = Random.Range(4000f, 4600f);
+            obstacleSpeed += 300f;
+            obstacleSpeed = Random.Range(obstacleSpeed, obstacleSpeed + 300f);
             return obstacleSpeed;
         }
         else
         {
-            obstacleSpeed = 5000f;
+            obstacleSpeed = Random.Range(obstacleSpeed, obstacleSpeed + 300f);
             return obstacleSpeed;
         }
     }
