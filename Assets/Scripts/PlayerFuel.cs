@@ -10,10 +10,8 @@ public class PlayerFuel : MonoBehaviour
     [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
     [SerializeField] bool toggleCollision = true;
-    
 
     public Slider slider;
-
     public AudioClip audioClip;
     public AudioSource audioSource;
 

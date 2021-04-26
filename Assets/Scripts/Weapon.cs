@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
     }
     void Update()
     {
@@ -30,11 +29,11 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ammo" )
         {
-            Debug.Log("Ammo canister Hit");
             audioSource.PlayOneShot(Reloading);
             Bullets = Bullets + 5;
             Destroy(collision.gameObject);

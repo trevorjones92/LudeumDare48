@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 public class ShipMovement : MonoBehaviour
 {
     [SerializeField] float shipThrust = 1100f;
-
     Rigidbody2D rb;
     PlayerFuel playerFuel;
-
     public GameObject pauseMenu;
 
     void Start()

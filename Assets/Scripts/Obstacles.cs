@@ -10,8 +10,8 @@ public class Obstacles : MonoBehaviour
     public GameObject[] SmallObstacleObjects;
     public GameObject[] MediumObstacleObject;
 
-    [SerializeField] private float frequencySmallObstacles = 2f;
-    [SerializeField] private float frequencyMediumObstacles = 3f;
+    [SerializeField] private float frequencySmallObstacles = 1.2f;
+    [SerializeField] private float frequencyMediumObstacles = 2.2f;
     [SerializeField] private float distanceTravelled = 0f;
     [SerializeField] private float obstacleSpeed;
     private int randomInt;
@@ -39,6 +39,7 @@ public class Obstacles : MonoBehaviour
     {
         DistanceTracker();
         SpawnRateOverTime();
+
         if (IsNextLevelOfDifficulty)
         {
             CancelInvoke();
@@ -47,7 +48,6 @@ public class Obstacles : MonoBehaviour
             InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
             IsNextLevelOfDifficulty = false;
         }
-
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public class Obstacles : MonoBehaviour
     {
         obstacleSpeed = ObstacleSpeedOverTime();
         Vector2 spawnPosition = SpawnLocation();
-        SelectRandomMediumObstacle();
+        SelectRandomSmallObstacle();
         Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
     }
 
@@ -82,7 +82,12 @@ public class Obstacles : MonoBehaviour
         return new Vector2(40f, randYCoord);
     }
 
-  
+    void SelectRandomSmallObstacle()
+    {
+        randomInt = Random.Range(0, SmallObstacleObjects.Length);
+        obstacle = SmallObstacleObjects[randomInt];
+    }
+
     void SelectRandomMediumObstacle()
     {
         randomInt = Random.Range(0, MediumObstacleObject.Length);
@@ -101,80 +106,55 @@ public class Obstacles : MonoBehaviour
     {
         if (distanceTravelled < 100f)
         {
-            frequencySmallObstacles = 1f;
-            frequencyMediumObstacles = 2f;
+           //
         }
         else if (distanceTravelled >= 150f && distanceTravelled <= 151f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.5f;
+            frequencySmallObstacles = 1f;
+            frequencyMediumObstacles = 2f;
         }
         else if (distanceTravelled >= 201f && distanceTravelled <= 201f)
         {
             IsNextLevelOfDifficulty = true;
             frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.5f;
+            frequencyMediumObstacles = 1.8f;
         }
         else if (distanceTravelled >= 250f && distanceTravelled <= 251f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.5f;
+            frequencySmallObstacles = .6f;
+            frequencyMediumObstacles = 1.6f;
         }
         else if (distanceTravelled >= 300f && distanceTravelled <= 301f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.5f;
+            frequencySmallObstacles = .4f;
+            frequencyMediumObstacles = 1.4f;
         }
         else if (distanceTravelled >= 350f && distanceTravelled <= 351f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .8f;
-            frequencyMediumObstacles = 1.5f;
+            frequencySmallObstacles = .2f;
+            frequencyMediumObstacles = 1.2f;
         }
         else if (distanceTravelled >= 400f && distanceTravelled <= 401f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .6f;
+            frequencySmallObstacles = .2f;
             frequencyMediumObstacles = 1f;
         }
         else if (distanceTravelled >= 450f && distanceTravelled <= 451f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
-        }
-        else if (distanceTravelled >= 500f && distanceTravelled <= 501f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
-        }
-        else if (distanceTravelled >= 550f && distanceTravelled <= 551f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
-        }
-        else if (distanceTravelled >= 600f && distanceTravelled <= 601f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
-        }
-        else if (distanceTravelled >= 650f && distanceTravelled <= 651f)
-        {
-            IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
+            frequencySmallObstacles = .2f;
+            frequencyMediumObstacles = .6f;
         }
         else if (distanceTravelled >= 700f && distanceTravelled <= 701f)
         {
             IsNextLevelOfDifficulty = true;
-            frequencySmallObstacles = .4f;
-            frequencyMediumObstacles = .8f;
+            frequencySmallObstacles = .2f;
+            frequencyMediumObstacles = .4f;
         }
     }
 
