@@ -10,6 +10,7 @@ public class PlayerFuel : MonoBehaviour
     [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
     [SerializeField] bool toggleCollision = true;
+    
 
     public Slider slider;
 
@@ -47,6 +48,7 @@ public class PlayerFuel : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
             shipFuel = (currentFuel + 50f);
             Destroy(collision.gameObject);
+            
         }
     }
     private void Update()
