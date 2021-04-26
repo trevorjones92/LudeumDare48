@@ -43,8 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838d309dbff6d094399249d3972f2820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequencySmallObstacles: 2
-  frequencyMediumObstacles: 5
   obstacle: {fileID: 0}
   SmallObstacleObjects:
   - {fileID: 7112657733650854445, guid: 02213ad83e29db6459c8301485b6d66c, type: 3}
@@ -52,8 +50,17 @@ MonoBehaviour:
   - {fileID: 2282365861931852778, guid: e29ad650335b5d445b767252ee963df0, type: 3}
   - {fileID: 1604921369747186166, guid: b92fd4c536fe100469b9a3786b648b52, type: 3}
   - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+  - {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
   MediumObstacleObject:
   - {fileID: 7112657733650854445, guid: ed537b480f2e0f34b8a7f1e0d07d71e5, type: 3}
   - {fileID: 3719598853030283530, guid: 9d72346101e5bc541bf4e7e570dbbab1, type: 3}
   - {fileID: 2282365861931852778, guid: 3acd3032ca7b63c40bbe513da61c1168, type: 3}
-  - {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+  textForDistance: {fileID: 0}
+  IsNextLevelOfDifficulty: 0
+  obstacleSpeed: 1000
+  minObstacleSpeed: 200
+  maxObstacleSpeed: 200
+  frequencySmallObstacles: 2
+  frequencyMediumObstacles: 2
+  distanceTravelled: 0
+  distanceIncrementer: 0

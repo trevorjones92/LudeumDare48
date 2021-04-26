@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && bullets > 0)
+        if (Input.GetButtonDown("Fire1") && bullets > 0 && Time.timeScale > 0)
         {
             Shoot();
             bullets = bullets - 1;
