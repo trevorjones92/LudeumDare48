@@ -39,7 +39,6 @@ public class Obstacles : MonoBehaviour
     {
         DistanceTracker();
         SpawnRateOverTime();
-
         if (IsNextLevelOfDifficulty)
         {
             CancelInvoke();
@@ -48,18 +47,10 @@ public class Obstacles : MonoBehaviour
             InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
             IsNextLevelOfDifficulty = false;
         }
+
     }
 
-    /// <summary>
-    /// Spawns small obstacles in the game. These are gameobjects in the GameObjects folder.
-    /// </summary>
-    void SpawnSmallObstacles()
-    {
-        obstacleSpeed = ObstacleSpeedOverTime();
-        Vector2 spawnPosition = SpawnLocation();
-        SelectRandomSmallObstacle();
-        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
-    }
+  
 
     /// <summary>
     /// Spawns medium obstacles in the game. These are gameobjects in the GameObjects folder.
@@ -82,18 +73,7 @@ public class Obstacles : MonoBehaviour
         return new Vector2(40f, randYCoord);
     }
 
-    /// <summary>
-    /// Randomly selects a small sized obstacle from a range of given gameobjects
-    /// </summary>
-    void SelectRandomSmallObstacle()
-    {
-        randomInt = Random.Range(0, SmallObstacleObjects.Length);
-        obstacle = SmallObstacleObjects[randomInt];
-    }
-
-    /// <summary>
-    /// Randomly selects a medium sized obstacle from a range of given gameobjects
-    /// </summary>
+  
     void SelectRandomMediumObstacle()
     {
         randomInt = Random.Range(0, MediumObstacleObject.Length);
