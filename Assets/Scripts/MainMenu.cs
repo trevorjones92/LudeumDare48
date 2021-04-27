@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
     {
         if (CoinPickup.PlayerCoins >= 10)
         {
-            Weapon.bullets += 10;
+            Weapon.bullets += 5;
             CoinPickup.PlayerCoins -= 10;
         }
     }

@@ -7,7 +7,7 @@ public class CoinPickup : MonoBehaviour
     [SerializeField] bool toggleCollision = true;
     public AudioClip audioClip;
     public AudioSource audioSource;
-    public static int PlayerCoins = 10;
+    public static int PlayerCoins = 0;
     
     void OnCollisionEnter2D(Collision2D collision)
     {
