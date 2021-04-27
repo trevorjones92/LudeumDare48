@@ -25,7 +25,7 @@ public class Obstacles : MonoBehaviour
     [SerializeField] public float frequencySmallObstacles = 2f;
     [SerializeField] public float frequencyMediumObstacles = 2.5f;
     [SerializeField] public float frequencyPickups = 2f;
-    [SerializeField] public float frequencyFuel = 1f;
+    [SerializeField] public float frequencyFuel = 3f;
     [SerializeField] public float distanceTravelled = 0f;
 
     /// <summary>
