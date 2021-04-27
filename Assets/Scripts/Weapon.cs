@@ -12,17 +12,18 @@ public class Weapon : MonoBehaviour
     public AudioClip Reloading;
     public Text bulletCount;
     public static int bullets = 5;
-
+    public static int maxBullets = 5;
 
     void Start()
     {
+        bullets = maxBullets;
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (bullets > 10)
+        if (bullets > maxBullets)
         {
-            bullets = 10;
+            bullets = maxBullets;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && bullets > 0 && Time.timeScale > 0)
