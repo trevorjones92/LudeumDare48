@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public AudioClip Shooting;
     public AudioClip Reloading;
     public Text bulletCount;
-    public int bullets = 5;
+    public static int bullets = 5;
 
 
     void Start()

@@ -1808,6 +1808,18 @@ PrefabInstance:
       propertyPath: textForDistance
       value: 
       objectReference: {fileID: 1110261507}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.data[0]
+      value: 
+      objectReference: {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.data[1]
+      value: 
+      objectReference: {fileID: 4430401533459961392, guid: 54b7dbebbb4ce9041a41d481437d0a32, type: 3}
     - target: {fileID: 4382397359275570455, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: m_RootOrder
       value: 2

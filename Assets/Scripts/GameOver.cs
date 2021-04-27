@@ -25,7 +25,7 @@ public class GameOver : MonoBehaviour
 
     void EnterShop()
     {
-        // Enter Shop
+        SceneManager.LoadScene("MainMenu");
     }
 
     void ExitGame()

@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerFuel : MonoBehaviour
 {
-    [SerializeField] private float fuelUsageRate = .05f;
     [SerializeField] public float currentFuel;
-    [SerializeField] public float shipFuel = 200f;
     [SerializeField] public float distanceTravelled = 0f;
     [SerializeField] bool toggleCollision = true;
 
@@ -15,9 +13,13 @@ public class PlayerFuel : MonoBehaviour
     public AudioClip audioClip;
     public AudioSource audioSource;
 
-    void Start()
+    public static float shipFuel = 200f;
+    public static float maxShipFuel = 200f;
+    public static float fuelUsageRate = .05f;
 
+    void Start()
     {
+        shipFuel = maxShipFuel;
         Setfuel(shipFuel);
         audioSource = GetComponent<AudioSource>();
     }

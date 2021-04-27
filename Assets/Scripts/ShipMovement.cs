@@ -50,7 +50,7 @@ public class ShipMovement : MonoBehaviour
 
     private bool DoesPlayerHaveFuel()
     {
-        if (playerFuel.shipFuel >= 0)
+        if (PlayerFuel.shipFuel >= 0)
         {
             return true;
         }
