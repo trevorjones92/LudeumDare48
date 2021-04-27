@@ -934,7 +934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7468029373727001864, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 343
+      value: 406
       objectReference: {fileID: 0}
     - target: {fileID: 7747547845565777978, guid: fe2cf0bf4aaa575449c60a6b8d68b858, type: 3}
       propertyPath: m_Camera
@@ -1437,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 731287411884152818, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -27
+      value: -153
       objectReference: {fileID: 0}
     - target: {fileID: 731287411884152818, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4265423852427838577, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 143
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 4265423852679359987, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_FontData.m_Font
@@ -1559,10 +1559,18 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: b496ac10c1a1410479c8d27b1ed6a537, type: 3}
+    - target: {fileID: 4265423853087972335, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 4265423854330814897, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: b496ac10c1a1410479c8d27b1ed6a537, type: 3}
+    - target: {fileID: 4265423854330814898, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 158
+      objectReference: {fileID: 0}
     - target: {fileID: 4669286339172159203, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_Name
       value: StatsCanvas
@@ -1787,6 +1795,14 @@ PrefabInstance:
     - target: {fileID: 4382397359275570453, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: m_Name
       value: ObstacleSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Fuel
+      value: 
+      objectReference: {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: frequencyFuel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: textForDistance
