@@ -51,7 +51,7 @@ public class PlayerFuel : MonoBehaviour
             
         }
     }
-    private void Update()
+    void Update()
     {
         if (shipFuel > 100f)
         {
