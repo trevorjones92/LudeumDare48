@@ -10,6 +10,8 @@ public class Obstacles : MonoBehaviour
     public GameObject obstacle;
     public GameObject[] SmallObstacleObjects;
     public GameObject[] MediumObstacleObject;
+    public GameObject[] Pickups;
+    public GameObject Fuel;
     public Text textForDistance;
     public bool IsNextLevelOfDifficulty = false;
     private int randomInt;
@@ -18,10 +20,13 @@ public class Obstacles : MonoBehaviour
     public float minObstacleSpeed = 200f;
     public float maxObstacleSpeed = 200f;
 
+    public static string score;
+
     [SerializeField] public float frequencySmallObstacles = 2f;
     [SerializeField] public float frequencyMediumObstacles = 2.5f;
+    [SerializeField] public float frequencyPickups = 2f;
+    [SerializeField] public float frequencyFuel = 1f;
     [SerializeField] public float distanceTravelled = 0f;
-    [SerializeField] public float distanceIncrementer = 0f;
 
     /// <summary>
     /// This starts on game start instance. Invokes methods to run evert X amount of seconds.
@@ -38,6 +43,8 @@ public class Obstacles : MonoBehaviour
 
         InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
         InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
+        InvokeRepeating("SpawnPickups", frequencyPickups, frequencyPickups);
+        InvokeRepeating("SpawnFuel", frequencyFuel, frequencyFuel);
         InvokeRepeating("IncreaseLevelDifficulty", 1f, 10f);
     }
 
@@ -51,6 +58,8 @@ public class Obstacles : MonoBehaviour
 
             InvokeRepeating("SpawnSmallObstacles", frequencySmallObstacles, frequencySmallObstacles);
             InvokeRepeating("SpawnMediumObstacles", frequencyMediumObstacles, frequencyMediumObstacles);
+            InvokeRepeating("SpawnPickups", frequencyPickups, frequencyPickups);
+            InvokeRepeating("SpawnFuel", frequencyFuel, frequencyFuel);
             InvokeRepeating("IncreaseLevelDifficulty", 10f, 10f);
             IsNextLevelOfDifficulty = false;
         }
@@ -76,6 +85,26 @@ public class Obstacles : MonoBehaviour
         Vector2 spawnPosition = SpawnLocation();
         SelectRandomMediumObstacle();
         Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * obstacleSpeed * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// Spawns pickups in the game. These are gameobjects in the GameObjects folder.
+    /// </summary>
+    void SpawnPickups()
+    {
+        Vector2 spawnPosition = SpawnLocation();
+        SelectRandomPickup();
+        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * 500f * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// Spawns fuel canisters in the game. These are gameobjects in the GameObjects folder.
+    /// </summary>
+    void SpawnFuel()
+    {
+        Vector2 spawnPosition = SpawnLocation();
+        obstacle = Fuel;
+        Instantiate(obstacle, spawnPosition, transform.rotation).GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.left * 500f * Time.deltaTime);
     }
 
     /// <summary>
@@ -106,10 +135,21 @@ public class Obstacles : MonoBehaviour
         obstacle = MediumObstacleObject[randomInt];
     }
 
+    /// <summary>
+    /// Randomly selects a medium sized obstacle from a range of given gameobjects
+    /// </summary>
+    void SelectRandomPickup()
+    {
+        randomInt = Random.Range(0, Pickups.Length);
+        obstacle = Pickups[randomInt];
+    }
+
     public float DistanceTracker()
     {
         distanceTravelled = distanceTravelled + 10f * Time.deltaTime;
         textForDistance.text = (Mathf.Round(distanceTravelled * 100) / 100).ToString();
+        score = (Mathf.Round(distanceTravelled * 100) / 100).ToString();
+
         return distanceTravelled;
     }
 

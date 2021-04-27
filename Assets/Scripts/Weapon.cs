@@ -20,7 +20,12 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && bullets > 0 && Time.timeScale > 0)
+        if (bullets > 10)
+        {
+            bullets = 10;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && bullets > 0 && Time.timeScale > 0)
         {
             Shoot();
             bullets = bullets - 1;

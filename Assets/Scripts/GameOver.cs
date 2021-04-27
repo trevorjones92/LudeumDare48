@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Button startButton, enterShopButton, exitGameButton;
-    public Text finalScore;
-    Obstacles obstacles;
+    public Text finalScoreText;
+    public string test;
 
     void Start()
     {
         startButton.onClick.AddListener(StartGame);
         enterShopButton.onClick.AddListener(EnterShop);
         exitGameButton.onClick.AddListener(ExitGame);
+        finalScoreText.text = Obstacles.score;
     }
 
     void StartGame()
