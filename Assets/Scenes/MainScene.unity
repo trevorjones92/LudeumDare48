@@ -1461,7 +1461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4265423852427838577, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -322.3
+      value: -322.29993
       objectReference: {fileID: 0}
     - target: {fileID: 4265423852427838577, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1471,6 +1471,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: b496ac10c1a1410479c8d27b1ed6a537, type: 3}
+    - target: {fileID: 4265423852679359996, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265423852679359996, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 4265423852860664283, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1559,10 +1567,22 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: b496ac10c1a1410479c8d27b1ed6a537, type: 3}
+    - target: {fileID: 4265423853087972335, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 4265423854330814897, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: b496ac10c1a1410479c8d27b1ed6a537, type: 3}
+    - target: {fileID: 4265423854330814898, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265423854330814898, guid: b476df39d5119ef4e8065863de009433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4669286339172159203, guid: b476df39d5119ef4e8065863de009433, type: 3}
       propertyPath: m_Name
       value: StatsCanvas
@@ -1789,9 +1809,33 @@ PrefabInstance:
       value: ObstacleSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Fuel
+      value: 
+      objectReference: {fileID: 461785012152533942, guid: cff56a3b19e77ee4e94fac1ae07d6f32, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: textForDistance
       value: 
       objectReference: {fileID: 1110261507}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.data[0]
+      value: 
+      objectReference: {fileID: 4430401533459961392, guid: 54b7dbebbb4ce9041a41d481437d0a32, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: Pickups.Array.data[1]
+      value: 
+      objectReference: {fileID: 511702122397313162, guid: 1d8889232cde9ef4fb724f0d597791e6, type: 3}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: SmallObstacleObjects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382397359275570454, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
+      propertyPath: SmallObstacleObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4382397359275570455, guid: 23353e7628d200342bff25f3a6a33173, type: 3}
       propertyPath: m_RootOrder
       value: 2
